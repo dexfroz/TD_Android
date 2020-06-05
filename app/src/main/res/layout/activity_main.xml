@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="20dp"
+
+        android:text="Connexion"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="#000"
+
+        app:layout_constraintBottom_toTopOf="@id/imageISEN"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageISEN"
+        android:layout_width="222dp"
+        android:layout_height="96dp"
+        android:src="@drawable/isen_med_yncrea"
+
+        app:layout_constraintBottom_toTopOf="@id/identifiant"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcomeText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Identifiant"
+
+
+        app:layout_constraintLeft_toLeftOf="@id/identifiant"
+        app:layout_constraintBottom_toTopOf="@id/identifiant"/>
+
+    <EditText
+        android:id="@+id/identifiant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:gravity="center"
+        android:hint="Entrer votre identifiant"
+        android:inputType="text"
+
+
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageISEN"
+        app:layout_constraintBottom_toTopOf="@id/motDePasse"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mot de passe"
+
+        app:layout_constraintLeft_toLeftOf="@id/motDePasse"
+        app:layout_constraintBottom_toTopOf="@id/motDePasse"/>
+
+    <EditText
+        android:id="@+id/motDePasse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:gravity="center"
+        android:inputType="text"
+        android:hint="Entrer votre mot de passe"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/identifiant"
+        app:layout_constraintBottom_toTopOf="@id/bouttonValider"></EditText>
+
+    <Button
+        android:id="@+id/bouttonValider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:gravity="center"
+
+        android:background="#F00"
+        android:textColor="#FFF"
+        android:text="Valider"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/motDePasse"
+        app:layout_constraintBottom_toBottomOf="parent"></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:padding="20dp"
+            android:gravity="center"
+
+            android:text="Connexion"></TextView>
+
+        <EditText
+            android:id="@+id/identifiant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_marginTop="100dp"
+            android:hint="Entrer votre identifiant"></EditText>
+
+        <EditText
+            android:id="@+id/motDePasse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_marginTop="100dp"
+            android:hint="Entrer votre mot de passe"></EditText>
+
+        <Button
+            android:id="@+id/bouttonValider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="Valider"></Button>
+
+    </LinearLayout-->
