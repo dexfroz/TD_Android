@@ -17,17 +17,17 @@
         android:text="Connexion"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:textColor="#000"
+        android:textColor="@color/black"
 
-        app:layout_constraintBottom_toTopOf="@id/imageISEN"
+        app:layout_constraintBottom_toTopOf="@id/imageIsenLogin"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageISEN"
-        android:layout_width="222dp"
-        android:layout_height="96dp"
+        android:id="@+id/imageIsenLogin"
+        android:layout_width="220dp"
+        android:layout_height="95dp"
         android:src="@drawable/isen_med_yncrea"
 
         app:layout_constraintBottom_toTopOf="@id/identifiant"
@@ -36,10 +36,10 @@
         app:layout_constraintTop_toBottomOf="@id/welcomeText" />
 
     <TextView
+        android:id="@+id/identifiantText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Identifiant"
-
 
         app:layout_constraintLeft_toLeftOf="@id/identifiant"
         app:layout_constraintBottom_toTopOf="@id/identifiant"/>
@@ -53,14 +53,13 @@
         android:hint="Entrer votre identifiant"
         android:inputType="text"
 
-
-
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageISEN"
+        app:layout_constraintTop_toBottomOf="@id/imageIsenLogin"
         app:layout_constraintBottom_toTopOf="@id/motDePasse"></EditText>
 
     <TextView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mot de passe"
@@ -74,7 +73,7 @@
         android:layout_height="wrap_content"
         android:padding="20dp"
         android:gravity="center"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:hint="Entrer votre mot de passe"
 
         app:layout_constraintLeft_toLeftOf="parent"
@@ -83,14 +82,25 @@
         app:layout_constraintBottom_toTopOf="@id/bouttonValider"></EditText>
 
     <Button
+        android:id="@+id/bouttonMontrerCacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Montrer"
+
+        app:layout_constraintLeft_toRightOf="@id/motDePasse"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/motDePasse"
+        app:layout_constraintBottom_toBottomOf="@id/motDePasse"></Button>
+
+    <Button
         android:id="@+id/bouttonValider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="20dp"
         android:gravity="center"
 
-        android:background="#F00"
-        android:textColor="#FFF"
+        android:background="@color/red"
+        android:textColor="@color/white"
         android:text="Valider"
 
         app:layout_constraintLeft_toLeftOf="parent"

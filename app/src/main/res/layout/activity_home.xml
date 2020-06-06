@@ -6,4 +6,129 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+
+    <Button
+        android:id="@+id/deconnexionBouttonHomePage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Déconnexion"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageView
+        android:id="@+id/imageIsenHome"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:src="@drawable/isen_med_yncrea"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bonjourText"/>
+
+    <TextView
+        android:id="@+id/bonjourText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="Bonjour"
+        android:padding="20dp"
+
+        app:layout_constraintTop_toBottomOf="@id/imageIsenHome"
+        app:layout_constraintBottom_toTopOf="@id/imageCycleDeVie"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageView
+        android:id="@+id/imageCycleDeVie"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/cycledevie"
+
+        app:layout_constraintTop_toBottomOf="@id/bonjourText"
+        app:layout_constraintRight_toLeftOf="@id/imageSauvegarde"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/imagePermissions"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Cycle de vie"
+
+        app:layout_constraintTop_toBottomOf="@id/imageCycleDeVie"
+        app:layout_constraintLeft_toLeftOf="@id/imageCycleDeVie"
+        app:layout_constraintRight_toRightOf="@id/imageCycleDeVie"/>
+
+
+    <ImageView
+        android:id="@+id/imagePermissions"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/permissions"
+
+        app:layout_constraintTop_toBottomOf="@id/imageCycleDeVie"
+        app:layout_constraintRight_toLeftOf="@id/imageWebServices"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Permissions"
+
+        app:layout_constraintTop_toBottomOf="@id/imagePermissions"
+        app:layout_constraintLeft_toLeftOf="@id/imagePermissions"
+        app:layout_constraintRight_toRightOf="@id/imagePermissions"/>
+
+
+
+    <ImageView
+        android:id="@+id/imageSauvegarde"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/sauvegarde"
+
+        app:layout_constraintTop_toBottomOf="@id/bonjourText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/imageCycleDeVie"
+        app:layout_constraintBottom_toTopOf="@id/imageWebServices"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Sauvegarde"
+
+        app:layout_constraintTop_toBottomOf="@id/imageSauvegarde"
+        app:layout_constraintLeft_toLeftOf="@id/imageSauvegarde"
+        app:layout_constraintRight_toRightOf="@id/imageSauvegarde"/>
+
+
+
+    <ImageView
+        android:id="@+id/imageWebServices"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/webservices"
+
+        app:layout_constraintTop_toBottomOf="@id/imageSauvegarde"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/imagePermissions"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Webservices"
+
+        app:layout_constraintTop_toBottomOf="@id/imageWebServices"
+        app:layout_constraintLeft_toLeftOf="@id/imageWebServices"
+        app:layout_constraintRight_toRightOf="@id/imageWebServices"/>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
