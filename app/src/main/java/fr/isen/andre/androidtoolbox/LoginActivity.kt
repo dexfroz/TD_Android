@@ -1,7 +1,5 @@
 package fr.isen.andre.androidtoolbox
 
-//import des methodes pour afficher/cacher motdepassse
-
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -14,9 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-
-class MainActivity : AppCompatActivity() {
-
+class LoginActivity : AppCompatActivity() {
 
     final private var IdentifiantFinal: String = "Admin";
     final private var MotDePasseFinal: String = "123";
@@ -32,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         mBouttonMontrerCacher = findViewById<Button>(R.id.bouttonMontrerCacher);
         mMotDePasse = findViewById<EditText>(R.id.motDePasse);
@@ -55,7 +51,6 @@ class MainActivity : AppCompatActivity() {
 
 
 */
-
     }
 
     private fun gestionBouttonValider() {
@@ -65,6 +60,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Accès autorisé", Toast.LENGTH_LONG).show();
                 val homeActivity = Intent(this, HomeActivity::class.java);
                 startActivity(homeActivity);
+                finish();
             }
             else{
                 Toast.makeText(this, "Accès refusé", Toast.LENGTH_LONG).show();
@@ -74,7 +70,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun gestionTextMotDePasse() {
-        mMotDePasse.addTextChangedListener(object: TextWatcher{
+        mMotDePasse.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(
                 s: CharSequence,
                 start: Int,
@@ -115,7 +111,7 @@ class MainActivity : AppCompatActivity() {
                 count: Int
             ) {
 
-               // mIdentifiantText.setTextColor(resources.getColorStateList(R.color.red));
+                //requires higher api : mIdentifiantText.setTextColor(resources.getColorStateList(R.color.red,null));
                 mBouttonValider.isEnabled = (s.toString().length != 0);
                 // This is where we'll check the user input
                 mBooleanIdentifiantEntrer = (IdentifiantFinal.equals(s.toString()));

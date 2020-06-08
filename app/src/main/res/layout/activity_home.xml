@@ -40,7 +40,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
-    <ImageView
+
+    <ImageButton
+        android:id="@+id/imageCycleDeVie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/cycledevie"
+        android:contentDescription="Cycle de vie"
+        app:layout_constraintTop_toBottomOf="@id/bonjourText"
+        app:layout_constraintRight_toLeftOf="@id/imageSauvegarde"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/imagePermissions"/>
+    <!--ImageView
         android:id="@+id/imageCycleDeVie"
         android:layout_width="150dp"
         android:layout_height="100dp"
@@ -49,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@id/bonjourText"
         app:layout_constraintRight_toLeftOf="@id/imageSauvegarde"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/imagePermissions"/>
+        app:layout_constraintBottom_toTopOf="@id/imagePermissions"/-->
 
     <TextView
         android:layout_width="wrap_content"
