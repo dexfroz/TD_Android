@@ -21,7 +21,7 @@ class CycleFragment: Fragment() {
         super.onPause()
         Log.i("CycleFragment", "Fragment en Pause")
     }
-    
+
     override fun onDestroyView() {
         super.onDestroyView()
         Toast.makeText(context, "Fragment détruit", Toast.LENGTH_LONG).show()

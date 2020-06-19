@@ -11,7 +11,9 @@ class HomeActivity : AppCompatActivity() {
 
 
     private lateinit var mBouttonDeconnexion: Button;
-    private lateinit var mBouttonCycleDeVie: ImageButton;
+    private lateinit var mBouttonCycleDeVie: ImageButton
+    private lateinit var mBouttonPermission: ImageButton
+    private lateinit var mBouttonWebServices: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,9 +21,27 @@ class HomeActivity : AppCompatActivity() {
 
         mBouttonDeconnexion = findViewById<Button>(R.id.deconnexionBouttonHomePage)
         mBouttonCycleDeVie = findViewById<ImageButton>(R.id.imageCycleDeVie)
+        mBouttonPermission = findViewById<ImageButton>(R.id.imagePermissions)
+        mBouttonWebServices = findViewById<ImageButton>(R.id.imageWebServices)
 
         gestionDeconnexionBoutton();
         gestionCycleDeVieBoutton();
+        gestionPermissionBoutton();
+        gestionWebServicesButton();
+    }
+
+    private fun gestionWebServicesButton() {
+        mBouttonWebServices.setOnClickListener{
+            val webServicesActivity = Intent(this, WebServicesActivity::class.java)
+            startActivity(webServicesActivity)
+        }
+    }
+
+    private fun gestionPermissionBoutton() {
+        mBouttonPermission.setOnClickListener{
+            val permissionActivity = Intent(this, PermissionActivity::class.java)
+            startActivity(permissionActivity)
+        }
     }
 
     private fun gestionCycleDeVieBoutton() {
