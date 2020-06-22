@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SaveActivity">
+
+    <TextView
+        android:id="@+id/textViewFormulaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Formulaire de Sauvergarde"
+        android:textStyle="bold"
+        android:textSize="25dp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nomPersonneFormulaire"/>
+
+    <EditText
+        android:id="@+id/nomPersonneFormulaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nom"
+        android:inputType="textPersonName"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewFormulaire"
+        app:layout_constraintBottom_toTopOf="@id/prenomPersonneFormulaire"/>
+
+    <EditText
+        android:id="@+id/prenomPersonneFormulaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Prénom"
+        android:inputType="textPersonName"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dateNaissancePersonneFormulaire"
+        app:layout_constraintTop_toBottomOf="@id/nomPersonneFormulaire"/>
+
+    <EditText
+        android:id="@+id/dateNaissancePersonneFormulaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Date Naissance (JJ/MM/AAAA)"
+        android:inputType="date"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bouttonEnvoyerFormulaire"
+        app:layout_constraintTop_toBottomOf="@id/prenomPersonneFormulaire"/>
+
+    <Button
+        android:id="@+id/bouttonEnvoyerFormulaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Envoyer"
+
+        app:layout_constraintTop_toBottomOf="@id/dateNaissancePersonneFormulaire"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/bouttonVoirFormulaire"/>
+
+    <Button
+        android:id="@+id/bouttonVoirFormulaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voir"
+
+        app:layout_constraintLeft_toRightOf="@id/bouttonEnvoyerFormulaire"
+        app:layout_constraintTop_toBottomOf="@id/dateNaissancePersonneFormulaire"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

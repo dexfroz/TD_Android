@@ -28,28 +28,31 @@ import kotlinx.android.synthetic.main.activity_permission.*
 
 class PermissionActivity : AppCompatActivity(), LocationListener {
 
-
-
-    lateinit var locationManager: LocationManager
-
-    private lateinit var mImagePermissionActivity: ImageButton
-    private lateinit var mLocationTextView : TextView
-
     companion object {
         const val pictureRequestCode = 1
         const val contactPermissionRequestCode = 2
         const val gpsPermissionRequestCode = 3
     }
+    //particular variable
+    lateinit var locationManager: LocationManager
+
+    //member variable
+    private lateinit var mImagePermissionActivity: ImageButton
+    private lateinit var mLocationTextView : TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_permission)
 
+        //Link members variables to xml views
         mImagePermissionActivity = findViewById<ImageButton>(R.id.imagePermissionActivity)
         mLocationTextView = findViewById<TextView>(R.id.locationTextView)
 
+        //all functions managing xml views
         gestionImagePermissionActivity();
 
+        //requests for different permissions
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
         requestPermission(android.Manifest.permission.READ_CONTACTS, contactPermissionRequestCode) {
@@ -70,6 +73,7 @@ class PermissionActivity : AppCompatActivity(), LocationListener {
    }
 
     private fun pictureLecture() {
+        //Load a picture from gallery or camera
          var pictureIntent = Intent(Intent.ACTION_PICK)
         pictureIntent.type = "image/*"
 
@@ -85,6 +89,7 @@ class PermissionActivity : AppCompatActivity(), LocationListener {
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        //display picture depending on the user choice (camera or gallery)
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == PermissionActivity.pictureRequestCode && resultCode == Activity.RESULT_OK) {
             if (data?.data != null) {
@@ -99,11 +104,13 @@ class PermissionActivity : AppCompatActivity(), LocationListener {
     }
 
     fun refreshPosition(location: Location) {
+        //display the actual location of the user
         mLocationTextView.text = "latitude : ${location.latitude} \nlongitude : ${location.longitude}"
         Toast.makeText(this, "latitude : ${location.latitude} \nlongitude : ${location.longitude}", Toast.LENGTH_LONG).show()
     }
 
     override fun onLocationChanged(location: Location?) {
+        //update the position if the user move
         location?.let {
             refreshPosition(it)
         }
@@ -111,9 +118,11 @@ class PermissionActivity : AppCompatActivity(), LocationListener {
     }
 
     private fun readContacts() {
+        //read all contacts in the list of the phone and display them
         val contactList = ArrayList<ContactModel>()
         val contacts = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null)
         while(contacts?.moveToNext() == true) {
+            //add each contacts to the ArrayList of contact model
             val displayName = contacts.getString(contacts.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
             val contactModel = ContactModel()
             contactModel.displayName = displayName.toString()
@@ -124,6 +133,7 @@ class PermissionActivity : AppCompatActivity(), LocationListener {
     }
 
     fun requestPermission(permissionToRequest: String, requestCode: Int, handler: ()-> Unit) {
+        //request permission to user in order to use gps or contact list
         if(ContextCompat.checkSelfPermission(this, permissionToRequest) != PackageManager.PERMISSION_GRANTED) {
             if(ActivityCompat.shouldShowRequestPermissionRationale(this, permissionToRequest)) {
                 //display toast
@@ -137,6 +147,7 @@ class PermissionActivity : AppCompatActivity(), LocationListener {
 
     @SuppressLint("MissingPermission")
     fun startGPS(){
+        //start the localisation
         Log.d("gps","start position")
         locationManager.requestSingleUpdate(LocationManager.NETWORK_PROVIDER,this,null)
         val location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
@@ -146,6 +157,7 @@ class PermissionActivity : AppCompatActivity(), LocationListener {
     }
 
     override fun onRequestPermissionsResult(
+        //use function depending on the request
         requestCode: Int,
         permissions: Array<out String>,
         grantResults: IntArray
@@ -156,7 +168,7 @@ class PermissionActivity : AppCompatActivity(), LocationListener {
             ) {
                 readContacts()
             }
-            else if(requestCode == gpsPermissionRequestCode && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            if(requestCode == gpsPermissionRequestCode && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                 startGPS()
             }
         }
@@ -164,15 +176,15 @@ class PermissionActivity : AppCompatActivity(), LocationListener {
     }
 
     override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+       //Unchanged function
     }
 
     override fun onProviderEnabled(provider: String?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        //Unchanged function
     }
 
     override fun onProviderDisabled(provider: String?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        //Unchanged function
     }
 
 }

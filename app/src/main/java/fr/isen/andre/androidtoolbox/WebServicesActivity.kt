@@ -1,13 +1,13 @@
 package fr.isen.andre.androidtoolbox
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import fr.isen.andre.androidtoolbox.adapter.UserModelAdaptater
 import fr.isen.andre.androidtoolbox.models.RandomUserResult
@@ -23,7 +23,7 @@ class WebServicesActivity : AppCompatActivity() {
     }
 
     private fun launchService() {
-
+        // Launch the discussion with an API that create random users and display them on the view
 
         val userApiUrl = "https://randomuser.me/api/?results=20"
         val queue = Volley.newRequestQueue(this)

@@ -8,10 +8,14 @@ import androidx.appcompat.app.AppCompatActivity
 
 class CycleDeVieActivity : AppCompatActivity() {
 
+    //member variable
     private lateinit var mTextCycleDeVieActivity: TextView;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cycle_de_vie)
+
+        //Link members variables to xml views
         mTextCycleDeVieActivity = findViewById<TextView>(R.id.textCycleDeVieActivity)
     }
 
